@@ -12,6 +12,17 @@ add_action('init', function() {
         'global_navigation' => 'グローバルナビゲーション',
     ]);
 
-
+    register_post_type('item', [
+        'label' => '商品管理',
+        'menu_position' => 5,
+        'menu_icon' => 'dashicons-store',
+        'public' => true,
+        'supports' => [
+            'thumbnail',
+            'title',
+            'editor'
+        ],
+        'has_archive' => true,
+    ]);
 });
 
