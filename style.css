@@ -44,6 +44,7 @@
 }
 .nav__item {
   margin-bottom: 20px;
+  list-style: none;
 }
 .nav__item > a {
   display: block;
