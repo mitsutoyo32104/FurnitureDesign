@@ -1,5 +1,4 @@
 <?php
-// メニュー情報の取得
 $menu_name = 'global_navigation';
 $locations = get_nav_menu_locations();
 $menu = wp_get_nav_menu_object($locations[$menu_name]);
