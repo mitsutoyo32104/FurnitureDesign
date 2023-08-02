@@ -1,4 +1,10 @@
 @charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .container {
   padding: 0 40px;
   max-width: 1000px;
@@ -15,8 +21,6 @@
 .menu-btn {
   border: none;
   outline: none;
-  cursor: pointer;
-  background-color: transparent;
 }
 .menu-btn > span {
   display: block;
@@ -24,7 +28,6 @@
   height: 2px;
   background-color: black;
   margin-bottom: 5px;
-  transition: all 0.3s;
 }
 
 .nav {
@@ -33,39 +36,16 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.8);
-  pointer-events: none;
+  background-color: rgba(0, 0, 0, 0.5);
   visibility: hidden;
 }
-.nav__main {
-  padding: 50px 50px;
-  transform: translateX(-100vw);
-  transition: transform 0.3s;
-}
 .nav__item {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 .nav__item > a {
   display: block;
   text-decoration: none;
-  color: white;
-}
-
-.header.open .menu-btn > span:first-child {
-  transform: translateY(7px) rotate(225deg);
-}
-.header.open .menu-btn > span:nth-child(2) {
-  transform: translateX(-30px);
-  opacity: 0;
-}
-.header.open .menu-btn > span:nth-child(3) {
-  transform: translateY(-7px) rotate(-225deg);
-}
-.header.open .nav {
-  visibility: visible;
-}
-.header.open .nav__main {
-  transform: none;
+  color: black;
 }
 
 .header {
@@ -89,7 +69,7 @@
 }
 
 /*
-Theme Name: Furniture Design2
+Theme Name: Furniture Design
 Author: Mitsutoyo Sasaoka
 Description: このテーマはFurniture Designのテーマです。
 Version: 1.0
