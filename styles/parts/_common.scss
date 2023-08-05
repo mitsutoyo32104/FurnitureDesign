@@ -17,3 +17,30 @@ body {
     }
 }
 
+
+.header {
+    height: 80px;
+
+    & .container {
+        height: 100%;
+    }
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+    }
+}
+
+
+
+.sns {
+    &__main {
+        display: flex;
+    }
+
+    &__item {
+        list-style: none;
+    }
+}

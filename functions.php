@@ -29,9 +29,11 @@ add_action('init', function() {
         'supports' => [
             'thumbnail',
             'title',
-            'editor'
+            'editor',
+            'custom-fields'
         ],
         'has_archive' => true,
+        'show_in_rest' => true,
     ]);
 });
 
