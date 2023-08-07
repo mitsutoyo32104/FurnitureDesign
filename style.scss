@@ -4,10 +4,14 @@ Author: Mitsutoyo Sasaoka
 Description: このテーマはFurniture Designのテーマです。
 Version: 1.0
 */
+
+
+// parts読み込み
 @use 'styles/parts/common';
 @use 'styles/parts/navigation';
-@use 'styles/parts/new-products';
-@use 'styles/parts/topics';
+@use 'styles/parts/swiper';
+@use 'styles/parts/button';
 
+// page読み込み
 @use 'styles/pages/home';
 
