@@ -9,7 +9,13 @@
     text-decoration: none;
     color: black;
 
-    // slide-bg sytle
+    & > a {
+        text-decoration: none;
+        color: black;
+        transition: all 0.3s;
+    }
+
+    // 背景色が左から右へと切り替わるボタン
     &.slide-bg {
         position: relative;
         z-index: 1;
@@ -31,11 +37,66 @@
         }
 
         &:hover {
-            color: white;
+            & > a {
+                color: white;
+            }
 
             &::before {
                 transform: none;
             }
         }
     }   
+
+
+    // 上からふわっとカバーが降りてくるようなボタン
+    &.cover-3d {
+        position: relative;
+        transform-style: preserve-3d;
+        perspective: 300px;
+        perspective-origin: center right;
+
+        & > a {
+            display: inline-block;
+            transform: translateZ(20px);
+        }
+
+        &::before {
+            display: inline-block;
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+             z-index: 1;
+            transform: rotateX(90deg);
+            transform-origin: center top;
+            transition: all 0.3s;
+            z-index: -1;
+            opacity: 0;
+        }
+
+        &:hover {
+            & > a {
+                color: white;
+            }
+
+            &::before {
+                transform: rotateX(0deg);
+                opacity: 1;
+            }
+        }
+    }
+
+
+    &.shadow {
+        box-shadow: 5px 5px 0px black;
+        transition: all 0.3s;
+
+        &:hover {
+            box-shadow: none;
+            transform: translate(5px, 5px);
+        }
+    }
 }

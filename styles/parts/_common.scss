@@ -17,6 +17,10 @@ body {
     }
 }
 
+.section-title {
+    margin-bottom: 10px;
+}
+
 
 .header {
     height: 80px;
@@ -34,13 +38,27 @@ body {
 }
 
 
+.footer {
+    margin-bottom: 90px;
+}
 
 .sns {
     &__main {
         display: flex;
+        justify-content: center;
     }
 
     &__item {
         list-style: none;
+        margin-right: 10px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        & > a {
+            color: rgba(0, 0, 0, 0.7);
+            text-decoration-color: rgba(0, 0, 0, 0.7);
+        }
     }
 }

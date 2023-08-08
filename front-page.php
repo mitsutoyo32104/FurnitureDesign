@@ -10,7 +10,7 @@ $new_query = new WP_Query([
 
 $product_query = new WP_Query([
     'post_type' => 'item',
-    'posts_per_page' => 12,
+    'posts_per_page' => 9,
     'paged' => 1
 ]);
 
@@ -20,7 +20,7 @@ $product_query = new WP_Query([
 <main>
     <section class="new-products">
         <div class="container">
-            <h2>NEW ITEMS</h2>
+            <h2 class="section-title">NEW ITEMS</h2>
             <!-- Slider main container -->
             <div class="swiper new-products__main">
                 <!-- Additional required wrapper -->
@@ -70,11 +70,13 @@ $product_query = new WP_Query([
                 <div class="swiper-scrollbar"></div>
             </div>
         </div>
-        <a class="btn slide-bg" href="#">View More</a>
+        <div class="btn slide-bg">
+            <a href="#">View More</a>
+        </div>
     </section>
     <section class="products">
         <div class="container">
-        <h2>ITEMS</h2>
+            <h2 class="section-title">ITEMS</h2>
             <ul class="products__main">
                 <?php if ($product_query->have_posts()) : ?>
                     <?php while ($product_query->have_posts()) : $product_query->the_post(); ?>
@@ -105,11 +107,13 @@ $product_query = new WP_Query([
                 <?php endif; ?>
             </ul>
         </div>
-
+        <div class="btn cover-3d">
+            <a href="#">View More</a>
+        </div>
     </section>
     <section class="topics">
         <div class="container">
-            <h2 id="#topic">Topics</h2>
+            <h2 class="section-title" id="#topic">Topics</h2>
             <ul class="topics__main">
                 <?php if (have_posts()) : ?>
                     <?php while (have_posts()) : the_post(); ?>
@@ -125,16 +129,9 @@ $product_query = new WP_Query([
                 <?php endif; ?>
             </ul>
         </div>
-    </section>
-    <section class="products">
-        <ul class="products__main">
-            <li class="products__item">
-
-            </li>
-        </ul>
+        <div class="btn shadow">
+            <a href="#">View More</a>
+        </div>
     </section>
 </main>
-<div class="view-more container">
-    <a href="#">View More</a>
-</div>
 <?php get_footer(); ?>

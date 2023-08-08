@@ -2,7 +2,7 @@
     margin-bottom: 80px;
 
     &__main {
-        margin-bottom: 30px;
+        margin-bottom: 40px;
     }
 }
 
@@ -14,6 +14,8 @@
 }
 
 .products {
+    margin-bottom: 70px;
+
     &__link {
         color: black;
         text-decoration: none;
@@ -22,7 +24,9 @@
     &__main {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(300px, auto));
+        gap: 30px;
         height: auto;
+        margin-bottom: 40px;
     }
 
     &__item {
@@ -38,14 +42,12 @@
             object-position: center;
         }
     }
-
-    &__text {
-
-    }
 }
 
 
 .topics {
+    margin-bottom: 90px;
+
     &__item {
         list-style: none;
         margin-bottom: 30px;

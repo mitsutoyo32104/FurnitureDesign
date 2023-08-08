@@ -12,6 +12,10 @@
   text-decoration: none;
 }
 
+.section-title {
+  margin-bottom: 10px;
+}
+
 .header {
   height: 80px;
 }
@@ -25,11 +29,24 @@
   height: 100%;
 }
 
+.footer {
+  margin-bottom: 90px;
+}
+
 .sns__main {
   display: flex;
+  justify-content: center;
 }
 .sns__item {
   list-style: none;
+  margin-right: 10px;
+}
+.sns__item:last-child {
+  margin-right: 0;
+}
+.sns__item > a {
+  color: rgba(0, 0, 0, 0.7);
+  text-decoration-color: rgba(0, 0, 0, 0.7);
 }
 
 .menu-btn {
@@ -98,7 +115,7 @@
 
 .swiper {
   width: 100%;
-  height: 300px;
+  height: 400px;
 }
 .swiper-slide {
   display: flex;
@@ -137,6 +154,11 @@
   text-decoration: none;
   color: black;
 }
+.btn > a {
+  text-decoration: none;
+  color: black;
+  transition: all 0.3s;
+}
 .btn.slide-bg {
   position: relative;
   z-index: 1;
@@ -156,18 +178,59 @@
   transform: translateX(-100%);
   transition: all 0.3s;
 }
-.btn.slide-bg:hover {
+.btn.slide-bg:hover > a {
   color: white;
 }
 .btn.slide-bg:hover::before {
   transform: none;
+}
+.btn.cover-3d {
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 300px;
+  perspective-origin: center right;
+}
+.btn.cover-3d > a {
+  display: inline-block;
+  transform: translateZ(20px);
+}
+.btn.cover-3d::before {
+  display: inline-block;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 1;
+  transform: rotateX(90deg);
+  transform-origin: center top;
+  transition: all 0.3s;
+  z-index: -1;
+  opacity: 0;
+}
+.btn.cover-3d:hover > a {
+  color: white;
+}
+.btn.cover-3d:hover::before {
+  transform: rotateX(0deg);
+  opacity: 1;
+}
+.btn.shadow {
+  box-shadow: 5px 5px 0px black;
+  transition: all 0.3s;
+}
+.btn.shadow:hover {
+  box-shadow: none;
+  transform: translate(5px, 5px);
 }
 
 .new-products {
   margin-bottom: 80px;
 }
 .new-products__main {
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 .to-all-product {
@@ -177,6 +240,9 @@
   text-decoration: none;
 }
 
+.products {
+  margin-bottom: 70px;
+}
 .products__link {
   color: black;
   text-decoration: none;
@@ -184,7 +250,9 @@
 .products__main {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, auto));
+  gap: 30px;
   height: auto;
+  margin-bottom: 40px;
 }
 .products__item {
   list-style: none;
@@ -195,6 +263,10 @@
   height: 70%;
   object-fit: cover;
   object-position: center;
+}
+
+.topics {
+  margin-bottom: 90px;
 }
 .topics__item {
   list-style: none;
