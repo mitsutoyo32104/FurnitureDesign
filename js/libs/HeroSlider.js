@@ -10,11 +10,11 @@ class HeroSlider {
             direction: "horizontal", 
             loop: true,
             effect: 'coverflow',
-            centeredSlides: true,
+            // centeredSlides: true,
             slidesPerView: 1,
             breakpoints: {
                 1024: {
-                    solidesPerView: 2,
+                    solidesPerView: 1.5,
                 }
             },
             speed: 1000,

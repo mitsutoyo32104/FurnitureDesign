@@ -29,7 +29,7 @@ $product_query = new WP_Query([
                         <?php while ($new_query->have_posts()) : $new_query->the_post(); ?>
                             <!-- Slides -->
                             <div class="swiper-slide">
-                                <div class="swiper-img">
+                                <div class="swiper-img-wrapper">
                                     <?php
                                     if (has_post_thumbnail()) {
                                         the_post_thumbnail();
@@ -80,7 +80,7 @@ $product_query = new WP_Query([
             <ul class="products__main">
                 <?php if ($product_query->have_posts()) : ?>
                     <?php while ($product_query->have_posts()) : $product_query->the_post(); ?>
-                        <li class="products__item">
+                        <li class="products__item appear ">
                             <a class="products__link" href="<?php the_permalink(); ?>">
                                 <div class="products__img">
                                     <?php

@@ -9,6 +9,7 @@ body {
 }
 
 .site-title {
+    
     & > a {
         display: block;
         font-size: 20px;
@@ -18,7 +19,9 @@ body {
 }
 
 .section-title {
+    display: inline-block;
     margin-bottom: 10px;
+    border-bottom: 3px solid black;
 }
 
 
