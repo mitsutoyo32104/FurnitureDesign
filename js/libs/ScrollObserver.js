@@ -1,14 +1,3 @@
-document.addEventListener('DOMContentLoaded', function() {
-
-    const callback = function(target) {
-        target.classList.add('inview');
-    }
-
-    new ScrollObserver('.products__item', callback)
-
-});
-
-
 class ScrollObserver {
     constructor(els, callback, options) {
         this.DOM = {}
