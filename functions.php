@@ -3,7 +3,7 @@ add_action('wp_enqueue_scripts', function () {
 
     // スタイルシートの読み込み
     wp_enqueue_style('reset_style', get_theme_file_uri() . '/styles/parts/reset.css');
-    wp_enqueue_style('common_style', get_theme_file_uri() . '/style.css');
+    wp_enqueue_style('main_style', get_theme_file_uri() . '/style.css');
 
     // scriptファイルの読み込み
     wp_enqueue_script('import_scripts', get_theme_file_uri('/js/import.js'));
@@ -46,6 +46,6 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
 // 抜粋の省略記号の変更
 function twpp_change_excerpt_more( $more ) {
-    return '...[more]';
+    return '... [Check the details]';
   }
   add_filter( 'excerpt_more', 'twpp_change_excerpt_more' );

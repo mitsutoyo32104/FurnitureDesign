@@ -14,7 +14,7 @@ class HeroSlider {
             slidesPerView: 1,
             breakpoints: {
                 1024: {
-                    solidesPerView: 1.5,
+                    slidesPerView: 1.5,
                 }
             },
             speed: 1000,

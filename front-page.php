@@ -20,7 +20,7 @@ $product_query = new WP_Query([
 <main>
     <section class="new-products">
         <div class="container">
-            <h2 class="section-title slide-text">NEW ITEMS</h2>
+            <h2 class="title slide-text">NEW RELEASE</h2>
             <!-- Slider main container -->
             <div class="swiper new-products__main">
                 <!-- Additional required wrapper -->
@@ -29,35 +29,37 @@ $product_query = new WP_Query([
                         <?php while ($new_query->have_posts()) : $new_query->the_post(); ?>
                             <!-- Slides -->
                             <div class="swiper-slide">
-                                <div class="swiper-img-wrapper">
-                                    <?php
-                                    if (has_post_thumbnail()) {
-                                        the_post_thumbnail();
-                                    }
-                                    ?>
-                                </div>
-                                <div class="swiper-text">
-                                    <div class="swiper-text-inner">
-                                        <h3><?php the_title(); ?></h3>
-                                        <p>
-                                            <?php
-                                            // カスタムフィールドから価格を取得後、1000区切にする
-                                            $price = get_post_meta(get_the_ID(), 'price', true);
-                                            $price = number_format((int)$price, 0, '.', ',');
-                                            echo '¥' . $price . '+ tax';
-                                            ?>
-                                        </p>
-
+                                <a href="<?php the_permalink(); ?>">
+                                    <div class="swiper-img-wrapper">
                                         <?php
-                                        // 日付情報の取得。(datetime属性用と表示用)
-                                        $release_day = get_post_meta(get_the_ID(), 'release', true);
-                                        $time_stamp = strtotime($release_day);
+                                        if (has_post_thumbnail()) {
+                                            the_post_thumbnail();
+                                        }
                                         ?>
-                                        <time datetime="<?php echo date('Y-m-d', $time_stamp)  ?>">
-                                            <?php echo date('Y/m/d', $time_stamp) . ' Release'; ?>
-                                        </time>
                                     </div>
-                                </div>
+                                    <div class="swiper-text">
+                                        <div class="swiper-text-inner">
+                                            <h3><?php the_title(); ?></h3>
+                                            <p>
+                                                <?php
+                                                // カスタムフィールドから価格を取得後、1000区切にする
+                                                $price = get_post_meta(get_the_ID(), 'price', true);
+                                                $price = number_format((int)$price, 0, '.', ',');
+                                                echo '¥' . $price . '+ tax';
+                                                ?>
+                                            </p>
+
+                                            <?php
+                                            // 日付情報の取得。(datetime属性用と表示用)
+                                            $release_day = get_post_meta(get_the_ID(), 'release', true);
+                                            $time_stamp = strtotime($release_day);
+                                            ?>
+                                            <time datetime="<?php echo date('Y-m-d', $time_stamp)  ?>">
+                                                <?php echo date('Y/m/d', $time_stamp) . ' Release'; ?>
+                                            </time>
+                                        </div>
+                                    </div>
+                                </a>
                             </div>
                         <?php endwhile; ?>
                     <?php endif; ?>
@@ -70,13 +72,13 @@ $product_query = new WP_Query([
                 <div class="swiper-scrollbar"></div>
             </div>
         </div>
-        <div class="btn slide-bg">
-            <a href="#">View More</a>
+        <div class="btn-wrapper">
+            <a  class="btn slide-bg" href="http://localhost:10019/item/">View More</a>
         </div>
     </section>
     <section class="products">
         <div class="container">
-            <h2 class="section-title slide-text">PRODUCTS</h2>
+            <h2 class="title slide-text">PRODUCTS</h2>
             <ul class="products__main">
                 <?php if ($product_query->have_posts()) : ?>
                     <?php while ($product_query->have_posts()) : $product_query->the_post(); ?>
@@ -107,13 +109,13 @@ $product_query = new WP_Query([
                 <?php endif; ?>
             </ul>
         </div>
-        <div class="btn cover-3d">
-            <a href="#">View More</a>
+        <div class="btn-wrapper">
+            <a  class="btn cover-3d" href="http://localhost:10019/item/"><span>View More</span></a>
         </div>
     </section>
     <section class="topics">
         <div class="container">
-            <h2 class="section-title slide-text" id="#topic">TOPICS</h2>
+            <h2 class="title slide-text" id="#topic">TOPICS</h2>
             <ul class="topics__main">
                 <?php if (have_posts()) : ?>
                     <?php while (have_posts()) : the_post(); ?>
@@ -129,8 +131,8 @@ $product_query = new WP_Query([
                 <?php endif; ?>
             </ul>
         </div>
-        <div class="btn shadow">
-            <a href="#">View More</a>
+        <div class="btn-wrapper">
+            <a class="btn shadow" href="#">View More</a>
         </div>
     </section>
 </main>

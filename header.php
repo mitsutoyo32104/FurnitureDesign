@@ -11,11 +11,12 @@
     <?php wp_head(); ?>
 </head>
 
-<body>
+<body <?php body_class(); ?>>
+    <?php wp_body_open(); ?>
     <header class="header">
         <div class="container">
             <div class="header__inner">
-                <h1 class="site-title"><a href="<?php home_url(); ?>">Furniture Design2</a></h1>
+                <h1 class="site-title"><a href="<?php echo esc_url(home_url()); ?>">Furniture Design2</a></h1>
                 <button class="menu-btn">
                     <span></span>
                     <span></span>

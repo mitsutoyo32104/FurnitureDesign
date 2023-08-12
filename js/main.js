@@ -15,14 +15,14 @@ document.addEventListener("DOMContentLoaded", function () {
     new ScrollObserver(".products__item", callback);
 
     // section-title scrollobserver
-    new ScrollObserver(".section-title", callback, {
+    new ScrollObserver(".title", callback, {
         root: null,
         rootMargin: "-100px 0px",
         threshold: 0,
     });
 
     // section-title-animation
-    const targets = document.querySelectorAll(".section-title");
+    const targets = document.querySelectorAll(".title");
     targets.forEach((target) => {
         console.log(target);
         new TextAnimation(target);

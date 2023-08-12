@@ -13,6 +13,7 @@
                 </li>
             </ul>
         </div>
+        <p class="copyright">&copy;Furniture Design2</p>
     </div>
 </footer>
 <?php wp_footer(); ?>

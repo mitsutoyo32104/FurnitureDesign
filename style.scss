@@ -8,10 +8,12 @@ Version: 1.0
 // 共通部品のスタイル読み込み
 @use 'styles/parts/common';
 @use 'styles/parts/navigation';
-@use 'styles/parts/swiper';
+@use 'styles/parts/hero-slider';
 @use 'styles/parts/button';
 @use 'styles/parts/appear';
 @use 'styles/parts/text-animation';
 
 // page読み込み
-@use 'styles/pages/home';
+@use 'styles/pages/front-page';
+@use 'styles/pages/single-item';
+@use 'styles/pages/archive-item';
