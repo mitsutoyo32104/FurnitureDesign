@@ -3,7 +3,9 @@
     <div class="container">
         <h2 class="title slide-text"><?php the_title(); ?></h2>
         <div class="product__content">
-            <div class="product__img__wrapper">
+            <div class="product__img__wrapper spread-cover">
+                <span class="cover1"></span>
+                <span class="cover2"></span>
                 <?php the_post_thumbnail(); ?>
             </div>
             <div class="product__text">
