@@ -1,30 +1,50 @@
-.pagination {
-    text-align: center;
-    margin-bottom: 30px;
-    text-decoration: none;
+// カスタム投稿(商品管理)アーカイブページのページネーション
+.post-type-archive-item {
+    .pagination {
+        text-align: center;
+        margin-bottom: 30px;
+        text-decoration: none;
 
-    & .nav-links {
-        & > .page-numbers {
+        & .nav-links {
+            & > .page-numbers {
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                text-decoration: none;
+                color: black;
+                line-height: 20px;
+                margin-right: 10px;
+                text-decoration: underline;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                &.page-numbers.current {
+                    background-color: rgba(165, 42, 42, 0.6);
+                    border-radius: 50%;
+                    color: white;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+// カスタム投稿(商品管理個別ページ)のページネーション
+.single-item {
+    & .pagination {
+        text-align: center;
+        margin-bottom: 50px;
+
+        & > a {
             display: inline-block;
-            width: 20px;
-            height: 20px;
-            text-decoration: none;
+            margin-right: 20px;
             color: black;
-            line-height: 20px;
-            margin-right: 10px;
-            text-decoration: underline;
 
             &:last-child {
-                margin-right: 0;
+                margin-right: 0px;
             }
-
-            &.page-numbers.current {
-                background-color: rgba(165, 42, 42 , 0.6);
-                border-radius: 50%;
-                color: white;
-                text-decoration: none;
-            }
-
         }
     }
 }

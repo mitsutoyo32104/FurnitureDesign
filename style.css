@@ -401,12 +401,12 @@
   opacity: 1;
 }
 
-.pagination {
+.post-type-archive-item .pagination {
   text-align: center;
   margin-bottom: 30px;
   text-decoration: none;
 }
-.pagination .nav-links > .page-numbers {
+.post-type-archive-item .pagination .nav-links > .page-numbers {
   display: inline-block;
   width: 20px;
   height: 20px;
@@ -416,14 +416,27 @@
   margin-right: 10px;
   text-decoration: underline;
 }
-.pagination .nav-links > .page-numbers:last-child {
+.post-type-archive-item .pagination .nav-links > .page-numbers:last-child {
   margin-right: 0;
 }
-.pagination .nav-links > .page-numbers.page-numbers.current {
+.post-type-archive-item .pagination .nav-links > .page-numbers.page-numbers.current {
   background-color: rgba(165, 42, 42, 0.6);
   border-radius: 50%;
   color: white;
   text-decoration: none;
+}
+
+.single-item .pagination {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.single-item .pagination > a {
+  display: inline-block;
+  margin-right: 20px;
+  color: black;
+}
+.single-item .pagination > a:last-child {
+  margin-right: 0px;
 }
 
 .spread-cover {

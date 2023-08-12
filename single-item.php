@@ -42,4 +42,8 @@
         </div>
     </div>
 </main>
+<div class="pagination">
+    <?php next_post_link('%link', "<< latest <br> [%title]"); ?>
+    <?php previous_post_link('%link', "older >> <br> [%title]"); ?>
+</div>
 <?php get_footer(); ?>
