@@ -31,8 +31,9 @@
     }
 }
 
-// カスタム投稿(商品管理個別ページ)のページネーション
-.single-item {
+// 個別ページのページネーション
+.single-item,
+.single {
     & .pagination {
         text-align: center;
         margin-bottom: 50px;

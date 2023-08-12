@@ -1,8 +1,3 @@
-<?php
-
-
-
-?>
 <?php get_header(); ?>
 <section class="products">
     <div class="container">
