@@ -12,7 +12,11 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     // product-item scrollobserver
-    new ScrollObserver(".products__item", callback);
+    new ScrollObserver(".products__item", callback, {
+        root: null,
+        rootMargin: "-100px 0px",
+        threshold: 0,
+    });
 
     // section-title scrollobserver
     new ScrollObserver(".title", callback, {

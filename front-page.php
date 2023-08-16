@@ -72,9 +72,6 @@ $product_query = new WP_Query([
                 <div class="swiper-scrollbar"></div>
             </div>
         </div>
-        <div class="btn-wrapper">
-            <a  class="btn slide-bg" href="http://localhost:10019/item/">View More</a>
-        </div>
     </section>
     <section class="products">
         <div class="container">
@@ -82,7 +79,7 @@ $product_query = new WP_Query([
             <ul class="products__main">
                 <?php if ($product_query->have_posts()) : ?>
                     <?php while ($product_query->have_posts()) : $product_query->the_post(); ?>
-                        <li class="products__item appear ">
+                        <li class="products__item appear up">
                             <a class="products__link" href="<?php the_permalink(); ?>">
                                 <div class="products__img">
                                     <?php
@@ -110,7 +107,7 @@ $product_query = new WP_Query([
             </ul>
         </div>
         <div class="btn-wrapper">
-            <a  class="btn cover-3d" href="http://localhost:10019/item/"><span>View More</span></a>
+            <a  class="btn cover-3d" href="/item/"><span>View More</span></a>
         </div>
     </section>
     <section class="topics">
@@ -132,7 +129,7 @@ $product_query = new WP_Query([
             </ul>
         </div>
         <div class="btn-wrapper">
-            <a class="btn shadow" href="#">View More</a>
+            <a class="btn shadow" href="/category/topic/">View More</a>
         </div>
     </section>
 </main>

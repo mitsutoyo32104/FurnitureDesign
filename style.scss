@@ -14,6 +14,7 @@ Version: 1.0
 @use 'styles/parts/text-animation';
 @use 'styles/parts/pagination';
 @use 'styles/parts/spread-cover';
+@use 'styles/parts/gutenberg';
 
 
 // page読み込み
@@ -21,3 +22,5 @@ Version: 1.0
 @use 'styles/pages/single-item';
 @use 'styles/pages/single';
 @use 'styles/pages/archive-item';
+@use 'styles/pages/category';
+@use 'styles/pages/about-page';

@@ -43,7 +43,7 @@
     </div>
 </main>
 <div class="pagination">
-    <?php next_post_link('%link', "<< latest <br> [%title]"); ?>
-    <?php previous_post_link('%link', "older >> <br> [%title]"); ?>
+    <?php next_post_link('%link', "[%title] <br> << latest"); ?>
+    <?php previous_post_link('%link', "[%title] <br> older >>"); ?>
 </div>
 <?php get_footer(); ?>
