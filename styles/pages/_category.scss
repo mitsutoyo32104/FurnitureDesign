@@ -1,0 +1,30 @@
+.category-topic {
+    .topic {
+
+        &__item {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        &__link {
+            text-decoration: none;
+            color: black;
+        }
+
+        &__detail {
+            text-decoration: underline;
+        }
+    }
+    .excerpt-wrapper {
+        margin-bottom: 10px;
+    }
+
+    .thumnail-wrapper {
+        & > img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+}

@@ -1,0 +1,22 @@
+// .tileに適用するアニメーションです。
+.slide-text {
+    & > .char {
+        display: inline-block;
+        transform: translateX(100px);
+        opacity: 0;
+        transition: all 0.3s;
+
+        @for $i from 1 through 40 {
+            &:nth-child(#{$i}) {
+                transition-delay: $i * 0.03s;
+            }
+        }
+    }
+}
+
+.slide-text.inview {
+    & > .char {
+        transform: none;
+        opacity: 1;
+    }
+}

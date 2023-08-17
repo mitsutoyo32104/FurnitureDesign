@@ -4,7 +4,24 @@ Author: Mitsutoyo Sasaoka
 Description: このテーマはFurniture Designのテーマです。
 Version: 1.0
 */
+
+// 共通部品のスタイル読み込み
 @use 'styles/parts/common';
 @use 'styles/parts/navigation';
+@use 'styles/parts/hero-slider';
+@use 'styles/parts/button';
+@use 'styles/parts/appear';
+@use 'styles/parts/text-animation';
+@use 'styles/parts/pagination';
+@use 'styles/parts/spread-cover';
+@use 'styles/parts/gutenberg';
 
-@use 'styles/pages/home';
+
+// page読み込み
+@use 'styles/pages/front-page';
+@use 'styles/pages/single-item';
+@use 'styles/pages/single';
+@use 'styles/pages/archive-item';
+@use 'styles/pages/category';
+@use 'styles/pages/about-page';
+@use 'styles/pages/contact-page';

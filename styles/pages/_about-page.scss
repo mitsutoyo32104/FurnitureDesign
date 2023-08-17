@@ -1,0 +1,67 @@
+@use '../global' as *;
+
+.about {
+    margin-bottom: 20px;
+
+    &__row {
+        margin-bottom: 50px;
+
+        @include mq() {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &.second-row {
+            flex-direction: row-reverse;
+        }
+    }
+
+    &__text {
+        margin-bottom: 10px;
+
+        @include mq() {
+            width: 40%;
+            position: relative;
+            margin-bottom: 0px;
+        }
+
+        &__inner {
+
+            @include mq() {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 100%;
+            }
+        }
+    }
+
+    &__img__wrapper {
+        @include mq() {
+            width: 50%;
+        }
+
+        & > img {
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+
+
+    &__location {
+        text-align: center;
+
+        & .googlemap {
+            display: block;
+            text-align: center;
+            width: 100%;
+            margin: 0 auto;
+
+            @include mq() {
+                width: 70%;
+            }
+        }
+    }
+}

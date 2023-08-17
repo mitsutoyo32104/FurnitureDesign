@@ -1,7 +1,13 @@
 @charset "UTF-8";
+/*
+Theme Name: Furniture Design2
+Author: Mitsutoyo Sasaoka
+Description: このテーマはFurniture Designのテーマです。
+Version: 1.0
+*/
 .container {
   padding: 0 40px;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -10,6 +16,74 @@
   font-size: 20px;
   color: black;
   text-decoration: none;
+}
+
+.title-wrapper {
+  text-align: center;
+}
+
+.title {
+  display: inline-block;
+  margin-bottom: 30px;
+  border-bottom: 3px solid black;
+}
+
+.sub-title-wrapper {
+  text-align: center;
+}
+
+.sub-title {
+  display: inline-block;
+  border-bottom: 1px solid black;
+  margin-bottom: 10px;
+}
+
+.check-detail {
+  text-decoration: underline dotted;
+}
+
+.price {
+  font-weight: bold;
+}
+
+.header {
+  height: 80px;
+}
+.header .container {
+  height: 100%;
+}
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.footer {
+  margin-bottom: 90px;
+}
+
+.sns {
+  margin-bottom: 30px;
+}
+.sns__main {
+  display: flex;
+  justify-content: center;
+}
+.sns__item {
+  list-style: none;
+  margin-right: 20px;
+}
+.sns__item:last-child {
+  margin-right: 0;
+}
+.sns__item > a {
+  color: rgba(0, 0, 0, 0.7);
+  text-decoration-color: rgba(0, 0, 0, 0.7);
+}
+
+.copyright {
+  text-align: center;
 }
 
 .menu-btn {
@@ -31,19 +105,20 @@
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 10000;
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.8);
-  pointer-events: none;
   visibility: hidden;
 }
 .nav__main {
-  padding: 50px 50px;
+  padding: 50px 40px;
   transform: translateX(-100vw);
   transition: transform 0.3s;
 }
 .nav__item {
   margin-bottom: 20px;
+  list-style: none;
 }
 .nav__item > a {
   display: block;
@@ -51,6 +126,13 @@
   color: white;
 }
 
+.header.open .menu-btn {
+  position: relative;
+  z-index: 10001;
+}
+.header.open .menu-btn > span {
+  background-color: white;
+}
 .header.open .menu-btn > span:first-child {
   transform: translateY(7px) rotate(225deg);
 }
@@ -68,29 +150,703 @@
   transform: none;
 }
 
-.header {
-  height: 80px;
+.swiper {
+  width: 100%;
+  height: 400px;
 }
-.header .container {
-  height: 100%;
+.swiper-slide > a {
+  display: block;
+  text-decoration: none;
 }
-.header__inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+@media ((min-width: 961px)) {
+  .swiper-slide > a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.swiper-img-wrapper {
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+@media ((min-width: 961px)) {
+  .swiper-img-wrapper {
+    width: 60%;
+  }
+}
+.swiper-img-wrapper > img {
+  display: block;
+  width: 100%;
   height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.3);
+}
+.swiper-text {
+  color: black;
+}
+@media ((min-width: 961px)) {
+  .swiper-text {
+    width: 40%;
+    position: relative;
+  }
+}
+@media ((min-width: 961px)) {
+  .swiper-text-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+.swiper-text-inner > h3 {
+  margin-bottom: 20px;
+}
+.swiper-button-prev, .swiper-button-next {
+  outline: none;
 }
 
-.sns__main {
-  display: flex;
+.swiper-slide-active .swiper-img-wrapper > img {
+  animation-name: kf-img-zoom;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-delay: 0.4s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
 }
-.sns__item {
+
+@keyframes kf-img-zoom {
+  0% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: none;
+  }
+}
+.btn {
+  display: block;
+  width: 200px;
+  border: 1px solid black;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  transition: all 0.3s;
+  padding: 10px 0;
+  margin: 0 auto;
+}
+.btn.slide-bg {
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s;
+  overflow: hidden;
+}
+.btn.slide-bg::before {
+  display: inline-block;
+  content: "";
+  background-color: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transform: translateX(-100%);
+  transition: all 0.3s;
+}
+.btn.slide-bg:hover {
+  color: white;
+}
+.btn.slide-bg:hover::before {
+  transform: none;
+}
+.btn.cover-3d {
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 300px;
+  perspective-origin: center right;
+}
+.btn.cover-3d > span {
+  display: inline-block;
+  transform: translateZ(20px);
+}
+.btn.cover-3d::before {
+  display: inline-block;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 1;
+  transform: rotateX(90deg);
+  transform-origin: center top;
+  transition: all 0.3s;
+  z-index: -1;
+  opacity: 0;
+}
+.btn.cover-3d:hover {
+  color: white;
+}
+.btn.cover-3d:hover::before {
+  transform: rotateX(0deg);
+  opacity: 1;
+}
+.btn.shadow {
+  box-shadow: 5px 5px 0px black;
+  transition: all 0.3s;
+}
+.btn.shadow:hover {
+  box-shadow: none;
+  transform: translate(5px, 5px);
+}
+.btn.spread {
+  transition: all 0.3s;
+  color: black;
+}
+.btn.spread:hover {
+  letter-spacing: 5px;
+  background-color: black;
+  color: white;
+}
+
+.appear {
+  transform: translateY(10px);
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.appear {
+  transform: translateX(10px);
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.appear {
+  transform: translateY(-10px);
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.appear {
+  transform: translateX(-10px);
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.appear.inview {
+  transform: none;
+  opacity: 1;
+}
+
+.slide-text > .char {
+  display: inline-block;
+  transform: translateX(100px);
+  opacity: 0;
+  transition: all 0.3s;
+}
+.slide-text > .char:nth-child(1) {
+  transition-delay: 0.03s;
+}
+.slide-text > .char:nth-child(2) {
+  transition-delay: 0.06s;
+}
+.slide-text > .char:nth-child(3) {
+  transition-delay: 0.09s;
+}
+.slide-text > .char:nth-child(4) {
+  transition-delay: 0.12s;
+}
+.slide-text > .char:nth-child(5) {
+  transition-delay: 0.15s;
+}
+.slide-text > .char:nth-child(6) {
+  transition-delay: 0.18s;
+}
+.slide-text > .char:nth-child(7) {
+  transition-delay: 0.21s;
+}
+.slide-text > .char:nth-child(8) {
+  transition-delay: 0.24s;
+}
+.slide-text > .char:nth-child(9) {
+  transition-delay: 0.27s;
+}
+.slide-text > .char:nth-child(10) {
+  transition-delay: 0.3s;
+}
+.slide-text > .char:nth-child(11) {
+  transition-delay: 0.33s;
+}
+.slide-text > .char:nth-child(12) {
+  transition-delay: 0.36s;
+}
+.slide-text > .char:nth-child(13) {
+  transition-delay: 0.39s;
+}
+.slide-text > .char:nth-child(14) {
+  transition-delay: 0.42s;
+}
+.slide-text > .char:nth-child(15) {
+  transition-delay: 0.45s;
+}
+.slide-text > .char:nth-child(16) {
+  transition-delay: 0.48s;
+}
+.slide-text > .char:nth-child(17) {
+  transition-delay: 0.51s;
+}
+.slide-text > .char:nth-child(18) {
+  transition-delay: 0.54s;
+}
+.slide-text > .char:nth-child(19) {
+  transition-delay: 0.57s;
+}
+.slide-text > .char:nth-child(20) {
+  transition-delay: 0.6s;
+}
+.slide-text > .char:nth-child(21) {
+  transition-delay: 0.63s;
+}
+.slide-text > .char:nth-child(22) {
+  transition-delay: 0.66s;
+}
+.slide-text > .char:nth-child(23) {
+  transition-delay: 0.69s;
+}
+.slide-text > .char:nth-child(24) {
+  transition-delay: 0.72s;
+}
+.slide-text > .char:nth-child(25) {
+  transition-delay: 0.75s;
+}
+.slide-text > .char:nth-child(26) {
+  transition-delay: 0.78s;
+}
+.slide-text > .char:nth-child(27) {
+  transition-delay: 0.81s;
+}
+.slide-text > .char:nth-child(28) {
+  transition-delay: 0.84s;
+}
+.slide-text > .char:nth-child(29) {
+  transition-delay: 0.87s;
+}
+.slide-text > .char:nth-child(30) {
+  transition-delay: 0.9s;
+}
+.slide-text > .char:nth-child(31) {
+  transition-delay: 0.93s;
+}
+.slide-text > .char:nth-child(32) {
+  transition-delay: 0.96s;
+}
+.slide-text > .char:nth-child(33) {
+  transition-delay: 0.99s;
+}
+.slide-text > .char:nth-child(34) {
+  transition-delay: 1.02s;
+}
+.slide-text > .char:nth-child(35) {
+  transition-delay: 1.05s;
+}
+.slide-text > .char:nth-child(36) {
+  transition-delay: 1.08s;
+}
+.slide-text > .char:nth-child(37) {
+  transition-delay: 1.11s;
+}
+.slide-text > .char:nth-child(38) {
+  transition-delay: 1.14s;
+}
+.slide-text > .char:nth-child(39) {
+  transition-delay: 1.17s;
+}
+.slide-text > .char:nth-child(40) {
+  transition-delay: 1.2s;
+}
+
+.slide-text.inview > .char {
+  transform: none;
+  opacity: 1;
+}
+
+.post-type-archive-item .pagination {
+  text-align: center;
+  margin-bottom: 30px;
+  text-decoration: none;
+}
+.post-type-archive-item .pagination .nav-links > .page-numbers {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  text-decoration: none;
+  color: black;
+  line-height: 20px;
+  margin-right: 10px;
+  text-decoration: underline;
+}
+.post-type-archive-item .pagination .nav-links > .page-numbers:last-child {
+  margin-right: 0;
+}
+.post-type-archive-item .pagination .nav-links > .page-numbers.page-numbers.current {
+  background-color: rgba(165, 42, 42, 0.6);
+  border-radius: 50%;
+  color: white;
+  text-decoration: none;
+}
+
+.single-item .pagination,
+.single .pagination {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.single-item .pagination > a,
+.single .pagination > a {
+  display: inline-block;
+  margin-right: 20px;
+  color: black;
+}
+.single-item .pagination > a:last-child,
+.single .pagination > a:last-child {
+  margin-right: 0px;
+}
+
+.spread-cover {
+  position: relative;
+}
+.spread-cover > .cover1, .spread-cover > .cover2 {
+  background-color: rgb(239, 219, 181);
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 1s;
+  animation-name: kf-spread-cover1;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-delay: 0s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
+.spread-cover > .cover2 {
+  animation-name: kf-spread-cover2;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-delay: 0s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
+
+@keyframes kf-spread-cover1 {
+  0% {
+    clip-path: polygon(0% 0%, 100% 0%, 50% 50%, 0% 100%);
+  }
+  100% {
+    clip-path: polygon(0% 0%, 0% 0%, 0% 0%, 0% 0%);
+  }
+}
+@keyframes kf-spread-cover2 {
+  0% {
+    clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 50% 50%);
+  }
+  100% {
+    clip-path: polygon(100% 100%, 100% 100%, 100% 100%, 100% 100%);
+  }
+}
+.home .new-products {
+  margin-bottom: 80px;
+}
+.home .new-products__main {
+  margin-bottom: 40px;
+}
+.home .to-all-product {
+  display: block;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+}
+.home .products {
+  margin-bottom: 70px;
+}
+.home .products__link {
+  color: black;
+  text-decoration: none;
+}
+.home .products__main {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, auto));
+  gap: 30px;
+  height: auto;
+  margin-bottom: 40px;
+}
+.home .products__item {
   list-style: none;
 }
+.home .products__img > img {
+  display: block;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+}
+.home .topics {
+  margin-bottom: 90px;
+}
+.home .topics__item {
+  list-style: none;
+  margin-bottom: 30px;
+}
+.home .topics__link {
+  display: block;
+}
+.home .topics__link > h3 {
+  color: rgb(83, 80, 80);
+}
+.home .topics__link > img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+}
 
-/*
-Theme Name: Furniture Design2
-Author: Mitsutoyo Sasaoka
-Description: このテーマはFurniture Designのテーマです。
-Version: 1.0
-*//*# sourceMappingURL=style.css.map */
+.single-item .product {
+  margin-bottom: 50px;
+}
+.single-item .product__content {
+  display: flex;
+  justify-content: space-between;
+}
+.single-item .product__img__wrapper {
+  width: 55%;
+  height: 500px;
+}
+.single-item .product__img__wrapper > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.single-item .product__text {
+  width: 40%;
+}
+.single-item .product__description {
+  margin-bottom: 30px;
+}
+.single-item .product__description > p {
+  margin-bottom: 20px;
+}
+.single-item .product__information {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.single-item .product__information > dt {
+  width: 40%;
+  margin-bottom: 5px;
+}
+.single-item .product__information > dd {
+  width: 60%;
+}
+
+.single-post .topic {
+  margin-bottom: 50px;
+}
+.single-post .topic__img__wrapper {
+  width: 100%;
+  height: 500px;
+  margin-bottom: 50px;
+}
+.single-post .topic__img__wrapper > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.single-post .topic__text {
+  width: 100%;
+}
+.single-post .topic__description {
+  margin-bottom: 30px;
+}
+.single-post .topic__description > p {
+  margin-bottom: 20px;
+}
+
+.post-type-archive-item .products {
+  margin-bottom: 70px;
+}
+.post-type-archive-item .products__link {
+  color: black;
+  text-decoration: none;
+}
+.post-type-archive-item .products__main {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, auto));
+  gap: 30px;
+  height: auto;
+  margin-bottom: 40px;
+}
+.post-type-archive-item .products__item {
+  list-style: none;
+}
+.post-type-archive-item .products__img > img {
+  display: block;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.category-topic .topic__item {
+  list-style: none;
+  margin-bottom: 30px;
+}
+.category-topic .topic__link {
+  text-decoration: none;
+  color: black;
+}
+.category-topic .topic__detail {
+  text-decoration: underline;
+}
+.category-topic .excerpt-wrapper {
+  margin-bottom: 10px;
+}
+.category-topic .thumnail-wrapper > img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.about {
+  margin-bottom: 20px;
+}
+.about__row {
+  margin-bottom: 50px;
+}
+@media ((min-width: 961px)) {
+  .about__row {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.about__row.second-row {
+  flex-direction: row-reverse;
+}
+.about__text {
+  margin-bottom: 10px;
+}
+@media ((min-width: 961px)) {
+  .about__text {
+    width: 40%;
+    position: relative;
+    margin-bottom: 0px;
+  }
+}
+@media ((min-width: 961px)) {
+  .about__text__inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+  }
+}
+@media ((min-width: 961px)) {
+  .about__img__wrapper {
+    width: 50%;
+  }
+}
+.about__img__wrapper > img {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.about__location {
+  text-align: center;
+}
+.about__location .googlemap {
+  display: block;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+}
+@media ((min-width: 961px)) {
+  .about__location .googlemap {
+    width: 70%;
+  }
+}
+
+.contact h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+@media ((min-width: 961px)) {
+  .contact__inner {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+  }
+}
+@media ((min-width: 961px)) {
+  .contact__content {
+    width: 70%;
+    margin-right: 20px;
+  }
+}
+.contact__text {
+  margin-bottom: 20px;
+}
+.contact__img {
+  width: 70%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+.contact__img > img {
+  width: 100%;
+}
+.contact .form {
+  text-align: center;
+  margin-bottom: 20px;
+}
+@media ((min-width: 961px)) {
+  .contact .form {
+    text-align: left;
+  }
+}
+.contact .form__name {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.contact .form__message {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.contact .form__confirm {
+  margin-bottom: 20px;
+  display: block;
+  background-color: white;
+}
+@media ((min-width: 961px)) {
+  .contact .form__confirm {
+    margin-right: auto;
+    margin-left: 0;
+  }
+}
+.contact .form__submit {
+  margin-bottom: 20px;
+  background-color: white;
+}
+@media ((min-width: 961px)) {
+  .contact .form__submit {
+    margin-right: auto;
+    margin-left: 0;
+  }
+}
+.contact .form .error {
+  margin-bottom: 20px;
+}/*# sourceMappingURL=style.css.map */

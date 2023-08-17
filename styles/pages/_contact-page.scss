@@ -1,0 +1,82 @@
+@use '../global' as *;
+
+.contact {
+    & h2 {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    &__inner {        
+        @include mq() {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row-reverse;
+        }
+    }
+
+    &__content {
+        @include mq() {
+            width: 70%;
+            margin-right: 20px;
+        }
+    }
+
+    &__text {
+        margin-bottom: 20px;
+    }
+    
+    &__img {
+        width: 70%;
+        margin: 0 auto;
+        margin-bottom: 20px;
+
+        & > img {
+            width: 100%;
+        }
+    }
+
+
+    .form {
+        text-align: center;
+        margin-bottom: 20px;
+
+        @include mq() {
+            text-align: left;
+        }
+
+        &__name {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        &__message {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+    
+        &__confirm {
+            margin-bottom: 20px;
+            display: block;
+            background-color: white;
+
+            @include mq() {
+                margin-right: auto;
+                margin-left: 0;
+            }
+        }
+
+        &__submit {
+            margin-bottom: 20px;
+            background-color: white;
+
+            @include mq() {
+                margin-right: auto;
+                margin-left: 0;
+            }
+        }
+
+        & .error {
+            margin-bottom: 20px;
+        }
+    }
+}

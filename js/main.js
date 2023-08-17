@@ -1,10 +1,34 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const btn = document.querySelector('.menu-btn');
-    const header = document.querySelector('.header');
+document.addEventListener("DOMContentLoaded", function () {
+    // navigation menu
+    new NavMenu(".menu-btn", ".header");
 
-    btn.addEventListener('click', function() {
-        header.classList.toggle('open');
+    // slider
+    const hero = new HeroSlider(".swiper");
+    hero.stop();
+
+    // scrollobserver callback
+    const callback = function (target) {
+        target.classList.add("inview");
+    };
+
+    // product-item scrollobserver
+    new ScrollObserver(".products__item", callback, {
+        root: null,
+        rootMargin: "-100px 0px",
+        threshold: 0,
     });
 
-    
+    // section-title scrollobserver
+    new ScrollObserver(".title", callback, {
+        root: null,
+        rootMargin: "-100px 0px",
+        threshold: 0,
+    });
+
+    // section-title-animation
+    const targets = document.querySelectorAll(".title");
+    targets.forEach((target) => {
+        new TextAnimation(target);
+    });
+
 });

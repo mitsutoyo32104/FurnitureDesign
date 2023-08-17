@@ -1,0 +1,19 @@
+$pattern: (
+    'up': translateY(10px),
+    'left': translateX(10px),
+    'down': translateY(-10px),
+    'right:': translateX(-10px)
+);
+
+@each $key, $val in $pattern {
+    .appear {
+        transform: $val;
+        opacity: 0;
+        transition: all 0.5s;
+    }
+}
+
+.appear.inview {
+    transform: none;
+    opacity: 1;
+}

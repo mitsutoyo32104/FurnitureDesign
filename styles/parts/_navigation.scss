@@ -18,20 +18,21 @@
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 10000;
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.8);
-    pointer-events: none;
     visibility: hidden;
 
     &__main {
-        padding: 50px 50px; 
+        padding: 50px 40px; 
         transform: translateX(-100vw);
         transition: transform 0.3s;
     }
 
     &__item {
         margin-bottom: 20px;
+        list-style: none;
         
         & > a {
             display: block;
@@ -43,7 +44,12 @@
 
 .header.open {
     & .menu-btn {
+        position: relative;
+        z-index: 10001;
+        
         & > span {
+            background-color: white;
+
             &:first-child {
                 transform: translateY(7px) rotate(225deg);
             }
