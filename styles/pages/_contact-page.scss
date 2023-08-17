@@ -1,0 +1,57 @@
+.contact {
+    & h2 {
+        margin-bottom: 20px;
+    }
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__content {
+        width: 20%;
+    }
+
+    &__text {
+        margin-bottom :20px;
+    }
+    
+    &__img {
+        width: 70%;
+
+        & > img {
+            width: 100%;
+        }
+    }
+
+
+    .form {
+        &__name {
+            margin-bottom: 20px;
+        }
+
+        &__message {
+            margin-bottom: 20px;
+        }
+    
+        &__confirm {
+            padding: 5px 40px;
+            margin-bottom: 20px;
+            display: block;
+            margin-right: auto;
+            margin-left: 0;
+            background-color: white;
+        }
+
+        &__submit {
+            margin-bottom: 20px;
+            margin-right: auto;
+            margin-left: 0;
+            background-color: white;
+        }
+
+        & .error {
+            margin-bottom: 20px;
+        }
+    }
+}

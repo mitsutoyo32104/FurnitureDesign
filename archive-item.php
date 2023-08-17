@@ -17,7 +17,7 @@
                             <div class="products__text">
                                 <h3><?php the_title(); ?></h3>
                                 <p><?php the_excerpt(); ?></p>
-                                <p>
+                                <p class="price">
                                     <?php
                                     // カスタムフィールドから価格を取得後、1000区切にする
                                     $price = get_post_meta(get_the_ID(), 'price', true);

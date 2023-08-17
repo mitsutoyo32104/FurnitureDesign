@@ -1,6 +1,5 @@
 const uri = new URL(window.location);
 const origin = uri.origin;
-console.log(origin);
 
 document.write(`<script src="${origin}/wp-content/themes/FurnitureDesign2/js/libs/NavMenu.js"></script>`);
 document.write(`<script src=${origin}/wp-content/themes/FurnitureDesign2/js/libs/HeroSlider.js></script>`);

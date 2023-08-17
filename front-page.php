@@ -40,7 +40,7 @@ $product_query = new WP_Query([
                                     <div class="swiper-text">
                                         <div class="swiper-text-inner">
                                             <h3><?php the_title(); ?></h3>
-                                            <p>
+                                            <p class="price">
                                                 <?php
                                                 // カスタムフィールドから価格を取得後、1000区切にする
                                                 $price = get_post_meta(get_the_ID(), 'price', true);
@@ -79,7 +79,7 @@ $product_query = new WP_Query([
             <ul class="products__main">
                 <?php if ($product_query->have_posts()) : ?>
                     <?php while ($product_query->have_posts()) : $product_query->the_post(); ?>
-                        <li class="products__item appear up">
+                        <li class="products__item appear down">
                             <a class="products__link" href="<?php the_permalink(); ?>">
                                 <div class="products__img">
                                     <?php
@@ -91,7 +91,7 @@ $product_query = new WP_Query([
                                 <div class="products__text">
                                     <h3><?php the_title(); ?></h3>
                                     <p><?php the_excerpt(); ?></p>
-                                    <p>
+                                    <p class="price"> 
                                         <?php
                                         // カスタムフィールドから価格を取得後、1000区切にする
                                         $price = get_post_meta(get_the_ID(), 'price', true);

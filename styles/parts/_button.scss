@@ -90,4 +90,15 @@
             transform: translate(5px, 5px);
         }
     }
+
+    &.spread {
+        transition: all 0.3s;
+        color: black;
+
+        &:hover {
+            letter-spacing: 5px;
+            background-color: black;
+            color: white;
+        }
+    }
 }

@@ -6,7 +6,7 @@ $pattern: (
 );
 
 @each $key, $val in $pattern {
-    .appear.#{$key} {
+    .appear {
         transform: $val;
         opacity: 0;
         transition: all 0.5s;

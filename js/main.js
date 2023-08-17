@@ -28,7 +28,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // section-title-animation
     const targets = document.querySelectorAll(".title");
     targets.forEach((target) => {
-        console.log(target);
         new TextAnimation(target);
     });
 
