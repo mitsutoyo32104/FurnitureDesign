@@ -1,34 +1,49 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // navigation menu
-    new NavMenu(".menu-btn", ".header");
+    new Main();
+});
 
-    // slider
-    const hero = new HeroSlider(".swiper");
-    hero.stop();
+class Main {
+    constructor() {
+        this._init();
+        this._scrollInit();
+        this._textAnimationInit();
+    }
 
-    // scrollobserver callback
-    const callback = function (target) {
-        target.classList.add("inview");
-    };
-
-    // product-item scrollobserver
-    new ScrollObserver(".products__item", callback, {
-        root: null,
-        rootMargin: "-100px 0px",
-        threshold: 0,
-    });
-
-    // section-title scrollobserver
-    new ScrollObserver(".title", callback, {
-        root: null,
-        rootMargin: "-100px 0px",
-        threshold: 0,
-    });
+    _init() {
+        // navigation menu
+        new NavMenu(".menu-btn", ".header");
+    
+        // slider
+        const hero = new HeroSlider(".swiper");
+        hero.stop();
+    }
 
     // section-title-animation
-    const targets = document.querySelectorAll(".title");
-    targets.forEach((target) => {
-        new TextAnimation(target);
-    });
+    _textAnimationInit() {
+        const targets = document.querySelectorAll(".title");
+        targets.forEach((target) => {
+            new TextAnimation(target);
+        });
+    }
 
-});
+    _scrollInit() {
+        // product-item scrollobserver
+        new ScrollObserver(".products__item", this._callback, {
+            root: null,
+            rootMargin: "-100px 0px",
+            threshold: 0,
+        });
+
+        // section-title scrollobserver
+        new ScrollObserver(".title", this._callback, {
+            root: null,
+            rootMargin: "-100px 0px",
+            threshold: 0,
+        });
+    }
+
+    // scrollobserver callback
+    _callback(target) {
+        target.classList.add("inview");
+    }
+}
