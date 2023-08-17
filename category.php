@@ -1,7 +1,9 @@
 <?php get_header(); ?>
 <main class="topic">
     <div class="container">
-        <h2 class="title slide-text">TOPIC一覧</h2>
+        <div class="title-wrapper">
+            <h2 class="title slide-text">TOPIC一覧</h2>
+        </div>
         <ul class="topic__main">
             <?php if (have_posts()) : ?>
                 <?php while (have_posts()) : the_post(); ?>

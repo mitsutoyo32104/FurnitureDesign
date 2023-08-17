@@ -20,7 +20,9 @@ $product_query = new WP_Query([
 <main>
     <section class="new-products">
         <div class="container">
-            <h2 class="title slide-text">NEW RELEASE</h2>
+            <div class="title-wrapper">
+                <h2 class="title slide-text">NEW RELEASE</h2>
+            </div>
             <!-- Slider main container -->
             <div class="swiper new-products__main">
                 <!-- Additional required wrapper -->
@@ -75,7 +77,9 @@ $product_query = new WP_Query([
     </section>
     <section class="products">
         <div class="container">
-            <h2 class="title slide-text">PRODUCTS</h2>
+            <div class="title-wrapper">
+                <h2 class="title slide-text">PRODUCTS</h2>
+            </div>
             <ul class="products__main">
                 <?php if ($product_query->have_posts()) : ?>
                     <?php while ($product_query->have_posts()) : $product_query->the_post(); ?>
@@ -112,7 +116,9 @@ $product_query = new WP_Query([
     </section>
     <section class="topics">
         <div class="container">
-            <h2 class="title slide-text" id="#topic">TOPICS</h2>
+            <div class="title-wrapper">
+                <h2 class="title slide-text" id="#topic">TOPICS</h2>
+            </div>
             <ul class="topics__main">
                 <?php if (have_posts()) : ?>
                     <?php while (have_posts()) : the_post(); ?>

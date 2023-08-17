@@ -1,7 +1,9 @@
 <?php get_header(); ?>
 <section class="products">
     <div class="container">
-        <h2 class="title slide-text">PRODUCTS</h2>
+        <div class="title-wrapper">
+            <h2 class="title slide-text">PRODUCTS</h2>
+        </div>
         <ul class="products__main">
             <?php if (have_posts()) : ?>
                 <?php while (have_posts()) : the_post(); ?>

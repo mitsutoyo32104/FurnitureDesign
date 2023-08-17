@@ -1,4 +1,4 @@
-@use '../global/animation-mixin' as *;
+@use '../global' as *;
 
 .swiper {
     width: 100%;
@@ -6,16 +6,25 @@
 
     &-slide {
         &  > a {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: space-between;
+            display: block;
+            text-decoration: none;
+
+            @include mq() {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: space-between;
+            }
         }
     }
 
     &-img-wrapper {
-        width: 60%;
         overflow: hidden;
+        margin-bottom: 10px;
+
+        @include mq() {
+            width: 60%;
+        }
 
         & > img {
             display: block;
@@ -28,15 +37,20 @@
     }
 
     &-text {
-        width: 40%;
-        position: relative;
         color: black;
 
+        @include mq() {
+            width: 40%;
+            position: relative;
+        }
+
         &-inner {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            @include mq() {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
 
             & > h3 {
                 margin-bottom: 20px;

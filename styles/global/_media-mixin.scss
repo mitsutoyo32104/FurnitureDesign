@@ -5,7 +5,7 @@ $breakpoints: (
     'xl': '(min-width: 1281px)'
 );
 
-@mixin mq($breakpoints: lg) {
+@mixin mq($breakpoint: lg) {
     @media (#{map-get($breakpoints, $breakpoint)}) {
         @content;
     }

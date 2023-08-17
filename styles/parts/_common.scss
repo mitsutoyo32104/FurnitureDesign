@@ -1,3 +1,5 @@
+@use '../global' as *;
+
 .container {
     padding: 0 40px;
     max-width: 1200px;
@@ -13,10 +15,18 @@
     }
 }
 
+.title-wrapper {
+    text-align: center;
+}
+
 .title {
     display: inline-block;
     margin-bottom: 30px;
     border-bottom: 3px solid black;
+}
+
+.sub-title-wrapper {
+    text-align: center;
 }
 
 .sub-title {
@@ -63,7 +73,7 @@
 
     &__item {
         list-style: none;
-        margin-right: 10px;
+        margin-right: 20px;
 
         &:last-child {
             margin-right: 0;
