@@ -17,6 +17,11 @@
     
         &__item {
             list-style: none;
+            transition: all 0.3s;
+
+            &:hover {
+                opacity: 0.7;
+            }
         }
     
         &__img {
@@ -27,6 +32,12 @@
                 object-fit: cover;
                 object-position: center;
             }
+        }
+
+        &__text {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px 20px;
         }
     }
 }

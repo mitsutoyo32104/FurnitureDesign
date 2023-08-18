@@ -4,6 +4,11 @@
         &__item {
             list-style: none;
             margin-bottom: 30px;
+            transition: all 0.3s;
+
+            &:hover {
+                opacity: 0.7;
+            }
         }
 
         &__link {
@@ -15,6 +20,7 @@
             text-decoration: underline;
         }
     }
+
     .excerpt-wrapper {
         margin-bottom: 10px;
     }
